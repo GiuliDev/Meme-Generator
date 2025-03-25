@@ -2,18 +2,21 @@
   "name": "Scrim-s01uaiu",
   "description": "https://scrimba.com/learn-react-legacy-c003ni72th/~042/s0iqttknu8/head",
   "scripts": {
+    "dev": "webpack -w",
     "watch": "webpack -w",
     "build": "webpack"
   },
   "dependencies": {
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "webpack": "^2.0"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "babel-core": "^6.0",
-    "babel-loader": "^7.0",
+    "babel-loader": "^9.2.1",
     "babel-preset-env": "*",
-    "babel-preset-react": "*"
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   }
 }

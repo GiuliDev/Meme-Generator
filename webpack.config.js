@@ -1,32 +1,29 @@
+const path = require("path");
+
 module.exports = {
-  "output": {
-    "filename": "[name].pack.js"
+  entry: "./index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
   },
-  "resolve": {
-    "extensions": [
-      ".js",
-      ".json"
-    ],
-    "alias": {}
-  },
-  "module": {
-    "rules": [
+  mode: "development",
+  module: {
+    rules: [
       {
-        "use": {
-          "loader": "babel-loader",
-          "options": {
-            "presets": [
-              "babel-preset-env",
-              "babel-preset-react"
-            ]
-          }
-        },
-        "exclude": /node_modules/,
-        "test": /\.js$/
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
-  "entry": {
-    "index": "./index"
-  }
-}
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
+  devtool: "source-map"
+};
